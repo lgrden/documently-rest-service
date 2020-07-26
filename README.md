@@ -11,6 +11,7 @@ For example a bank account holder may write a letter to the bank authorizing a t
 ## Requirenments
  - JDK 11+
  - Maven 3.6.1+
+ - MongoDB 4.0.10+
 
 ## Build tools
   - clean and build project
