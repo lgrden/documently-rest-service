@@ -1,0 +1,26 @@
+[
+	{
+		"id" : "f53e2f36-12fd-40c2-9588-1f3c716ae52a",
+		"name" : "Say Hello",
+		"description" : "Script saying hello.",
+		"fields" : [
+			{
+				"name" : "name",
+				"description" : "Say your name"
+			}
+		],
+		"template" : "<h1>Hello ${name}.</h1>"
+	},
+	{
+		"id" : "154f374e-04fd-4094-8517-11ec5cc24521",
+		"name" : "Say Bye",
+		"description" : "Script saying bye.",
+		"fields" : [
+			{
+				"name" : "name",
+				"description" : "Say your name"
+			}
+		],
+		"template" : "<h1>Bye ${name}.</h1>"
+	}
+]

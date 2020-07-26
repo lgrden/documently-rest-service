@@ -1,0 +1,34 @@
+[
+	{
+		"id" : "f53e2f36-12fd-40c2-9588-1f3c716ae52a",
+		"name" : "Authorization Letter for Claiming",
+		"description" : "This particular authorization letter sample for claiming would assist an individual to form an authorization letter for the purpose of claiming important documents on their behalf for properties.",
+		"fields" : [
+			{
+				"name" : "name",
+				"description" : "Your name"
+			},
+			{
+				"name" : "address",
+				"description" : "Your Address"
+			},
+			{
+				"name" : "contactInformation",
+				"description" : "Your Contact Information"
+			},
+			{
+				"name" : "recipientName",
+				"description" : "Recipient Name"
+			},
+			{
+				"name" : "recipientAddress",
+				"description" : "Recipient Address"
+			},
+			{
+				"name" : "recipientContactInformation",
+				"description" : "Recipient Contact Information"
+			}
+		],
+		"template" : "<div class=\"row\">\n${name}<br/>\n${address}<br/>\n${contactInformation}\n</div>\n<div class=\"row\">\n${recipientName}<br/>\n${recipientAddress}<br/>\n${recipientContactInformation}\n</div>"
+	}
+]
