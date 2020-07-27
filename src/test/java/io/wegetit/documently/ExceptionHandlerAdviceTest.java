@@ -1,24 +1,8 @@
 package io.wegetit.documently;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 import io.wegetit.documently.config.ExceptionHandlerAdvice;
 import io.wegetit.documently.config.ExceptionHandlerAdvice.ErrorResponse;
 import io.wegetit.documently.exception.EntityNotFoundException;
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.nio.file.AccessDeniedException;
-import java.util.Set;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
-import javax.validation.Path;
-import javax.validation.ValidationException;
-import org.hibernate.validator.engine.HibernateConstraintViolation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,6 +13,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Path;
+import javax.validation.ValidationException;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class ExceptionHandlerAdviceTest {
@@ -62,19 +59,13 @@ public class ExceptionHandlerAdviceTest {
     @Test
     void entityNotFound() {
         ResponseEntity<ErrorResponse> response = handler.exceptionHandler(new EntityNotFoundException("Entity not found"), request);
-        assertErrorResponse(response, HttpStatus.BAD_REQUEST, "ENTITY_NOT_FOUND", "Entity not found", true);
+        assertErrorResponse(response, HttpStatus.NOT_FOUND, "ENTITY_NOT_FOUND", "Entity not found", true);
     }
 
     @Test
     void validation() {
         ResponseEntity<ErrorResponse> response = handler.exceptionHandler(new ValidationException("Validation failed."), request);
         assertErrorResponse(response, HttpStatus.BAD_REQUEST, "VALIDATION", "Validation failed.", true);
-    }
-
-    @Test
-    void accessDenied() {
-        ResponseEntity<ErrorResponse> response = handler.exceptionHandler(new AccessDeniedException("Access denied."), request);
-        assertErrorResponse(response, HttpStatus.FORBIDDEN, "ACCESS_DENIED_EXCEPTION", "Access denied.", false);
     }
 
     @Test

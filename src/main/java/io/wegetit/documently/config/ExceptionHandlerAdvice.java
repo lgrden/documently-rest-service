@@ -68,10 +68,9 @@ public class ExceptionHandlerAdvice {
 				return details;
 			}
 		},
-		ENTITY_NOT_FOUND(EntityNotFoundException.class, HttpStatus.BAD_REQUEST, Level.WARNING, false),
+		ENTITY_NOT_FOUND(EntityNotFoundException.class, HttpStatus.NOT_FOUND, Level.WARNING, false),
 		VALIDATION(ValidationException.class, HttpStatus.BAD_REQUEST, Level.WARNING, false),
 		// GLOBAL EXCEPTIONS
-		ACCESS_DENIED_EXCEPTION(AccessDeniedException.class, HttpStatus.FORBIDDEN, null, false),
 		METHOD_NOT_SUPPORTED(HttpRequestMethodNotSupportedException.class, HttpStatus.METHOD_NOT_ALLOWED, null, false),
 		HTTP_MEDIA_TYPE_NOT_SUPPORTED(HttpMediaTypeNotSupportedException.class, HttpStatus.UNSUPPORTED_MEDIA_TYPE, Level.WARNING, false),
 		HTTP_MESSAGE_NOT_READABLE(HttpMessageNotReadableException.class, HttpStatus.BAD_REQUEST, Level.WARNING, false){

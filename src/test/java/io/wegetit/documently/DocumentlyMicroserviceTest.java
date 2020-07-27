@@ -55,7 +55,7 @@ public class DocumentlyMicroserviceTest {
     void html() {
         assertEquals("<h1>Hello John Doe.</h1>",
             restService.html(HELO_ID, Map.of("name", "John Doe")));
-        assertEquals("<h1>Hello .</h1>",
+        assertEquals("<h1>Hello <span style=\"font-weight: bold; color:red;\">{Say your name}</span>.</h1>",
             restService.html(HELO_ID, Map.of("doesNotExist", "John Doe")));
     }
 }

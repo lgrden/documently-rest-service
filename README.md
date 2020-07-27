@@ -8,17 +8,19 @@ One of the example of template document is letter of authorization.
 A letter of authorization is a document authorizing the recipient to carry out a certain action.
 For example a bank account holder may write a letter to the bank authorizing a transaction, or authorizing somebody else to act on their behalf if sick.
 
-## Requirenments
+When spring profile is set to dev, storage is populated with the default data.
+```spring.profiles.active=dev```
+
+## System requirenments
  - JDK 11+
  - Maven 3.6.1+
  - MongoDB 4.0.10+
 
+## APIs
+  - OpenAPI definition: /v3/api-docs
+  - Swagger: /swagger-ui.html
+  - Management: /monitoring
+
 ## Build tools
-  - clean and build project
-        ```
-        mvn clean install
-        ```
-  - start project
-        ```
-        mvn spring-boot:run -Dspring.config.location=localhost.properties
-        ```
+  - clean and build project ```mvn clean install```
+  - start project ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
