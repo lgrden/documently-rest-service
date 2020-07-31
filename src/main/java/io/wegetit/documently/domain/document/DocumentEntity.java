@@ -1,5 +1,6 @@
-package io.wegetit.documently.document;
+package io.wegetit.documently.domain.document;
 
+import io.wegetit.documently.validation.ValidTemplate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -64,8 +65,11 @@ public class DocumentEntity {
 	private List<DocumentField> fields = List.of();
 
 	@NotEmpty
-	private String template;
+	private String content;
 
 	@NotNull
 	private LocalDateTime created;
+
+	@ValidTemplate
+	private String template;
 }

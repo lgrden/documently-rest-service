@@ -1,8 +1,9 @@
 [
 	{
 		"id" : "f53e2f36-12fd-40c2-9588-1f3c716ae52a",
-		"name" : "Authorization Letter for Claiming",
-		"description" : "This particular authorization letter sample for claiming would assist an individual to form an authorization letter for the purpose of claiming important documents on their behalf for properties.",
+		"name" : "Authorization Letter To Collect Documents",
+		"description" : "This particular authorization letter to collect documents sample for claiming would assist an individual to form an authorization letter for the purpose of claiming important documents on their behalf for properties.",
+		"template": "bootstrap.html",
 		"fields" : [
 			{
 				"name" : "name",
@@ -25,10 +26,22 @@
 				"description" : "Recipient Address"
 			},
 			{
-				"name" : "recipientContactInformation",
-				"description" : "Recipient Contact Information"
+				"name": "representative",
+				"description": "Representative"
+			},
+			{
+				"name": "representativeIdentificationDocument",
+				"description": "Representative Identification Document"
+			},
+			{
+				"name": "representativeIdentificationDocumentNumber",
+				"description": "Representative Identification Document Number"
+			},
+			{
+				"name": "documentName",
+				"description": "Document name"
 			}
 		],
-		"template" : "<div class=\"row\">\n${name}<br/>\n${address}<br/>\n${contactInformation}\n</div>\n<div class=\"row\">\n${recipientName}<br/>\n${recipientAddress}<br/>\n${recipientContactInformation}\n</div>"
+		"content" : "<div class=\"row row-space-100\"></div>\n    <div class=\"row\">\n      <ul class=\"list-unstyled\">\n        <li><h6>From:</h6></li>\n        <li>${name}</li>\n        <li>${address}</li>\n        <li>${contactInformation}</li>\n      </ul>\n    </div>\n    <div class=\"row row-space-25\"></div>\n    <div class=\"row\">\n      <ul class=\"list-unstyled\">\n        <li><h6>To:</h6></li>\n        <li>${recipientName}</li>\n        <li>${recipientAddress}</li>\n      </ul>\n    </div>\n    <div class=\"row row-space-100\"></div>\n\n    <div class=\"row\">\n      <div class=\"col py-3 px-lg-12\"><h5>Dear ${recipientName}</h5></div>\n    </div>\n\n    <div class=\"row\">\n      <div class=\"col py-3 px-lg-12\">\n        I <b>${name}</b>, herby grant <b>${representative}</b> permission to act as my representative to collect following documents <b>${documentName}</b> in my behalf.\n        In order to expedite the identification verification process <b>${representative}</b> will identify himself/herself with <b>${representativeIdentificationDocument}</b> with number <b>${representativeIdentificationDocumentNumber}</b>.\n      </div>\n    </div>\n    <div class=\"row row-space-100\"></div>\n    <div class=\"row\">\n      <div class=\"col-md-4 offset-md-8\">Sincerely</div>\n    </div>\n    <div class=\"row row-space-25\"></div>\n    <div class=\"row\">\n      <div class=\"col-md-4 offset-md-8\">.......................................</div>\n    </div>"
 	}
 ]

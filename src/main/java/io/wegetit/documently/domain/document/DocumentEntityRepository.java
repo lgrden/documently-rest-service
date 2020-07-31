@@ -1,4 +1,4 @@
-package io.wegetit.documently.document;
+package io.wegetit.documently.domain.document;
 
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.repository.MongoRepository;

@@ -1,8 +1,8 @@
 package io.wegetit.documently.application;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.wegetit.documently.document.DocumentEntity;
-import io.wegetit.documently.document.DocumentEntityService;
+import io.wegetit.documently.domain.document.DocumentEntity;
+import io.wegetit.documently.domain.document.DocumentEntityService;
 import java.util.Collections;
 import java.util.List;
 import javax.annotation.PostConstruct;

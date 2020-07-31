@@ -1,4 +1,4 @@
-package io.wegetit.documently.document;
+package io.wegetit.documently.domain.document;
 
 import io.wegetit.documently.validation.UUID;
 import javax.validation.constraints.NotEmpty;

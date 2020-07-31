@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import io.wegetit.documently.document.DocumentEntity;
-import io.wegetit.documently.document.DocumentEntityRestService;
+import io.wegetit.documently.domain.document.DocumentEntity;
+import io.wegetit.documently.domain.document.DocumentEntityRestService;
 import io.wegetit.documently.exception.EntityNotFoundException;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
@@ -25,6 +25,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 public class DocumentlyMicroserviceTest {
 
     private static final String HELO_ID = "f53e2f36-12fd-40c2-9588-1f3c716ae52a";
+    private static final String BYE_ID = "154f374e-04fd-4094-8517-11ec5cc24521";
 
     @Autowired
     private DocumentEntityRestService restService;
@@ -52,10 +53,18 @@ public class DocumentlyMicroserviceTest {
     }
 
     @Test
-    void html() {
+    void htmlWithoutTemplate() {
         assertEquals("<h1>Hello John Doe.</h1>",
             restService.html(HELO_ID, Map.of("name", "John Doe")));
         assertEquals("<h1>Hello <span style=\"font-weight: bold; color:red;\">{Say your name}</span>.</h1>",
             restService.html(HELO_ID, Map.of("doesNotExist", "John Doe")));
+    }
+
+    @Test
+    void htmlWithTemplate() {
+        assertEquals("<h1>Bye John Doe.</h1>",
+            restService.html(BYE_ID, Map.of("name", "John Doe")));
+        assertEquals("<h1>Bye <span style=\"font-weight: bold; color:red;\">{Say your name}</span>.</h1>",
+            restService.html(BYE_ID, Map.of("doesNotExist", "John Doe")));
     }
 }

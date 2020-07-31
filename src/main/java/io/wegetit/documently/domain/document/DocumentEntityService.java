@@ -1,4 +1,4 @@
-package io.wegetit.documently.document;
+package io.wegetit.documently.domain.document;
 
 import static java.lang.String.format;
 

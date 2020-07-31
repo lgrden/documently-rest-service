@@ -9,18 +9,19 @@
 				"description" : "Say your name"
 			}
 		],
-		"template" : "<h1>Hello ${name}.</h1>"
+		"content" : "<h1>Hello ${name}.</h1>"
 	},
 	{
 		"id" : "154f374e-04fd-4094-8517-11ec5cc24521",
 		"name" : "Say Bye",
 		"description" : "Script saying bye.",
+		"template": "test.html",
 		"fields" : [
 			{
 				"name" : "name",
 				"description" : "Say your name"
 			}
 		],
-		"template" : "<h1>Bye ${name}.</h1>"
+		"content" : "Bye ${name}."
 	}
 ]
