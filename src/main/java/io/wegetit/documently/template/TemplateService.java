@@ -18,7 +18,7 @@ public class TemplateService {
         templateResolver.setTemplateMode(TemplateMode.TEXT);
         templateEngine.setTemplateResolver(templateResolver);
         Context context = new Context();
-        document.getFields().stream().forEach(p -> context.setVariable(p.getName(), "<span style=\"font-weight: bold; color:red;\">{"+p.getDescription()+"}</span>"));
+        document.getFields().forEach(p -> context.setVariable(p.getName(), "<span style=\"font-weight: bold; color:red;\">{"+p.getDescription()+"}</span>"));
         map.forEach((k, v) -> context.setVariable(k, v));
         return templateEngine.process(extendTemplate(document.getTemplate()), context);
     }

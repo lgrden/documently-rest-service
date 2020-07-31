@@ -64,7 +64,7 @@ public class ExceptionHandlerAdvice {
 			public Object getDetails(Throwable t) {
 				ConstraintViolationException ce = (ConstraintViolationException)t;
 				final Map<String, String> details = new HashMap<>();
-				ce.getConstraintViolations().stream().forEach(p -> details.put(asProperty(p.getPropertyPath()),  p.getMessage()));
+				ce.getConstraintViolations().forEach(p -> details.put(asProperty(p.getPropertyPath()),  p.getMessage()));
 				return details;
 			}
 		},
