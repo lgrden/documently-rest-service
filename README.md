@@ -9,7 +9,7 @@ A letter of authorization is a document authorizing the recipient to carry out a
 For example a bank account holder may write a letter to the bank authorizing a transaction, or authorizing somebody else to act on their behalf if sick.
 
 When spring profile is set to dev, storage is populated with the default data.
-```spring.profiles.active=dev```
+You can set the profile: ```spring.profiles.active=dev```
 
 ## System requirenments
  - JDK 11+
@@ -20,7 +20,12 @@ When spring profile is set to dev, storage is populated with the default data.
   - OpenAPI definition: /v3/api-docs
   - Swagger: /swagger-ui.html
   - Management: /monitoring
-
+  
 ## Build tools
   - clean and build project ```mvn clean install```
   - start project ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
+  
+## Docker
+To run microservice inside a docker container please execute following commands: 
+  - build docker image after the project is build ```docker build -t documently-microservice .```
+  - run mongo and builded microservice inside a docker ```docker-compose -f docker-compose.yaml up -d```
