@@ -12,11 +12,11 @@
 	</parent>
 
 	<groupId>io.wegetit</groupId>
-	<artifactId>documently-microservice</artifactId>
+	<artifactId>documently-rest-service</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>documently-microservice</name>
-	<description>Documently Microservice</description>
+	<name>documently-rest-service</name>
+	<description>Documently REST Service</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -86,7 +86,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>documently-microservice</finalName>
+		<finalName>documently-rest-service</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

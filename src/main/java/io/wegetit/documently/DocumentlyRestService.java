@@ -8,9 +8,9 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:application.properties")
 @SpringBootApplication
 @EnableHttpRequestLogger
-public class DocumentlyMicroservice {
+public class DocumentlyRestService {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DocumentlyMicroservice.class, args);
+		SpringApplication.run(DocumentlyRestService.class, args);
 	}
 }

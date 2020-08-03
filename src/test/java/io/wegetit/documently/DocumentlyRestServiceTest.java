@@ -22,7 +22,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
 @ActiveProfiles(profiles="dev")
-public class DocumentlyMicroserviceTest {
+public class DocumentlyRestServiceTest {
 
     private static final String HELO_ID = "f53e2f36-12fd-40c2-9588-1f3c716ae52a";
     private static final String BYE_ID = "154f374e-04fd-4094-8517-11ec5cc24521";

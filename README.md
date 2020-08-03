@@ -1,7 +1,7 @@
-# documently-microservice @ We Get IT
+# documently-rest-service @ We Get IT
 
 ## Descriprion
-This microservice serves prepared document templates.
+This rest service serves prepared document templates.
 It allows users in easy way to reuse those templates by only changing dynamic variables e.g. recipient.
 
 One of the example of template document is letter of authorization.
@@ -26,6 +26,6 @@ You can set the profile: ```spring.profiles.active=dev```
   - start project ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
   
 ## Docker
-To run microservice inside a docker container please execute following commands: 
-  - build docker image after the project is build ```docker build -t documently-microservice .```
-  - run mongo and builded microservice inside a docker ```docker-compose -f docker-compose.yaml up -d```
+To run service inside a docker container please execute following commands: 
+  - build docker image after the project is build ```docker build -t documently-rest-service .```
+  - run mongo and built service inside a docker ```docker-compose -f docker-compose.yaml up -d```

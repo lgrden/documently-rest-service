@@ -8,15 +8,15 @@ services:
     ports:
       - 27017:27017
 
-  documently-microservice:
-    image: documently-microservice
+  documently-rest-service:
+    image: documently-rest-service
     restart: always
-    container_name: documently-microservice
+    container_name: documently-rest-service
     ports:
       - 9090:9090
       - 9091:9091
     environment:
-      - SPRING_DATA_MONGODB_DATABASE=documently-microservice
+      - SPRING_DATA_MONGODB_DATABASE=documently-rest-service
       - SPRING_DATA_MONGODB_HOST=mongodb
       - SPRING_DATA_MONGODB_PORT=27017
       - SPRING_PROFILES_ACTIVE=dev

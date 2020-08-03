@@ -1,3 +1,3 @@
 FROM adoptopenjdk/openjdk11:latest
-COPY target/documently-microservice.jar /
-CMD java -jar /documently-microservice.jar
+COPY target/documently-rest-service.jar /
+CMD java -jar /documently-rest-service.jar
