@@ -1,6 +1,6 @@
 # documently-rest-service @ We Get IT
 
-## Descriprion
+## Description
 This rest service serves prepared document templates.
 It allows users in easy way to reuse those templates by only changing dynamic variables e.g. recipient.
 
@@ -11,7 +11,7 @@ For example a bank account holder may write a letter to the bank authorizing a t
 When spring profile is set to dev, storage is populated with the default data.
 You can set the profile: ```spring.profiles.active=dev```
 
-## System requirenments
+## System requirements
  - JDK 11+
  - Maven 3.6.1+
  - MongoDB 4.0.10+
