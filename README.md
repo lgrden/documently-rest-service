@@ -24,9 +24,10 @@ You can set the profile: ```spring.profiles.active=dev```
   
 ## Build tools
   - clean and build project ```mvn clean install```
-  - start project ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
+  - start project locally ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
   
 ## Docker
 To run service inside a docker container please execute following commands: 
   - build docker image after the project is build ```docker build -t documently-rest-service .```
   - run mongo and built service inside a docker ```docker-compose -f docker-compose.yaml up -d```
+  - build project, images and run in docker ```docker_build_deploy.sh```
