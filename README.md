@@ -15,7 +15,8 @@ You can set the profile: ```spring.profiles.active=dev```
  - JDK 11+
  - Maven 3.6.1+
  - MongoDB 4.0.10+
-
+ - Docker 19.03.12+
+ 
 ## APIs
   - OpenAPI definition: /v3/api-docs
   - Swagger: /swagger-ui.html
