@@ -1,14 +1,8 @@
 package io.wegetit.documently;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import io.wegetit.documently.domain.document.DocumentEntity;
 import io.wegetit.documently.domain.document.DocumentEntityRestService;
 import io.wegetit.documently.exception.EntityNotFoundException;
-import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -18,13 +12,20 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest(classes = DocumentlyRestServiceApplication.class)
 @TestInstance(Lifecycle.PER_CLASS)
 @ActiveProfiles(profiles="dev")
-public class DocumentlyRestServiceTest {
+public class DocumentlyRestServiceApplicationTest {
 
-    private static final String HELO_ID = "f53e2f36-12fd-40c2-9588-1f3c716ae52a";
+    private static final String HELLO_ID = "f53e2f36-12fd-40c2-9588-1f3c716ae52a";
     private static final String BYE_ID = "154f374e-04fd-4094-8517-11ec5cc24521";
 
     @Autowired
@@ -37,7 +38,7 @@ public class DocumentlyRestServiceTest {
 
     @Test
     void getByIdFound() {
-        DocumentEntity document = restService.getById(HELO_ID);
+        DocumentEntity document = restService.getById(HELLO_ID);
         assertNotNull(document);
         assertEquals("Say Hello", document.getName());
         assertEquals("Script saying hello.", document.getDescription());
@@ -55,9 +56,9 @@ public class DocumentlyRestServiceTest {
     @Test
     void htmlWithoutTemplate() {
         assertEquals("<h1>Hello John Doe.</h1>",
-            restService.html(HELO_ID, Map.of("name", "John Doe")));
+            restService.html(HELLO_ID, Map.of("name", "John Doe")));
         assertEquals("<h1>Hello <span style=\"font-weight: bold; color:red;\">{Say your name}</span>.</h1>",
-            restService.html(HELO_ID, Map.of("doesNotExist", "John Doe")));
+            restService.html(HELLO_ID, Map.of("doesNotExist", "John Doe")));
     }
 
     @Test
