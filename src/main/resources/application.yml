@@ -1,0 +1,19 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: documently
+
+mongock:
+  change-logs-scan-package: io.wegetit.documently.changelogs
+
+# ACTUATOR
+management:
+  endpoints:
+    enabled-by-default: false
+    info:
+      enabled: true
+    health:
+      enabled: true
+    web:
+      base-path: /monitoring

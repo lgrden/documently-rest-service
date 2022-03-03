@@ -1,17 +1,18 @@
 package io.wegetit.documently.domain.document;
 
-import static java.lang.String.format;
-
 import io.wegetit.documently.exception.EntityNotFoundException;
-import io.wegetit.documently.validation.ValidatorService;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
+import io.wegetit.sau.core.validator.ValidatorService;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import static java.lang.String.format;
 
 @AllArgsConstructor
 @Service
@@ -39,13 +40,5 @@ public class DocumentEntityService {
 		}
 		validator.validate(entity);
 		return repository.save(entity);
-	}
-
-	public void initialize(List<DocumentEntity> data) {
-		data.forEach(p -> {
-			p.setCreated(LocalDateTime.now());
-			validator.validate(p);	
-		});
-		repository.saveAll(data.stream().filter(p -> !repository.findById(p.getId()).isPresent()).collect(Collectors.toList()));
 	}
 }

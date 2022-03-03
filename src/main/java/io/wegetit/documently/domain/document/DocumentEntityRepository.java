@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface DocumentEntityRepository extends MongoRepository<DocumentEntity, String> {
+public interface DocumentEntityRepository extends MongoRepository<DocumentEntity, String> {
 
     @Query(value = "{}", fields="{ 'id' : 1, 'name' : 1, 'description' : 1, 'created' : 1}")
     List<DocumentEntity> findDocumentsLight(Sort sort);
