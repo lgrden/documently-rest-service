@@ -16,6 +16,7 @@ You can set the profile: ```spring.profiles.active=dev```
  - Maven 3.6.1+
  - MongoDB 4.0.10+
  - Docker 19.03.12+
+ - io.wegetit spring-application-utils 0.1.12
  
 ## APIs
   - OpenAPI definition: /v3/api-docs
@@ -24,10 +25,9 @@ You can set the profile: ```spring.profiles.active=dev```
   
 ## Build tools
   - clean and build project ```mvn clean install```
-  - start project locally ```mvn spring-boot:run -Dspring.config.location=localhost.properties```
   
 ## Docker
 To run service inside a docker container please execute following commands: 
   - build docker image after the project is build ```docker build -t documently-rest-service .```
   - run mongo and built service inside a docker ```docker-compose -f docker-compose.yaml up -d```
-  - build project, images and run in docker ```docker_build_deploy.sh```
+  - build images and run in docker  ```.\deploy.sh```
