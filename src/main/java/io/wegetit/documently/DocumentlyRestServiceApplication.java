@@ -9,6 +9,7 @@ import io.wegetit.sau.core.log.http.EnableHttpRequestLogger;
 import io.wegetit.sau.core.log.http.HttpRequestFilter;
 import io.wegetit.sau.core.validator.EnableValidation;
 import io.wegetit.sau.mongo.EnableMongo;
+import io.wegetit.sau.swagger.EnableSwagger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -24,6 +25,7 @@ import javax.annotation.PostConstruct;
 @EnableValidation
 @EnableMongock
 @EnableMongo
+@EnableSwagger
 @Configuration
 public class DocumentlyRestServiceApplication {
 
