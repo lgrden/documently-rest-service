@@ -19,23 +19,24 @@
 		<itextpdf.version>5.5.13.1</itextpdf.version>
 		<j2html.version>1.3.0</j2html.version>
 		<spring.version>2.6.3</spring.version>
+		<spring-application-utils.version>0.1.13</spring-application-utils.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>io.wegetit</groupId>
 			<artifactId>spring-application-utils-core</artifactId>
-			<version>0.1.12</version>
+			<version>${spring-application-utils.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.wegetit</groupId>
 			<artifactId>spring-application-utils-mongo</artifactId>
-			<version>0.1.12</version>
+			<version>${spring-application-utils.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.wegetit</groupId>
 			<artifactId>spring-application-utils-swagger</artifactId>
-			<version>0.1.12</version>
+			<version>${spring-application-utils.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

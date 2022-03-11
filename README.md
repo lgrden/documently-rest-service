@@ -16,7 +16,7 @@ You can set the profile: ```spring.profiles.active=dev```
  - Maven 3.6.1+
  - MongoDB 4.0.10+
  - Docker 19.03.12+
- - io.wegetit spring-application-utils 0.1.12
+ - io.wegetit spring-application-utils 0.1.13
  
 ## APIs
   - OpenAPI definition: /v3/api-docs
